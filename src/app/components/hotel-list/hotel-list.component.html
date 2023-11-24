@@ -1,0 +1,65 @@
+<div class="container">
+  <div class="container text-center m-5">
+    <h3>Lista de Hoteles</h3>
+  </div>
+  <table class="table table-striped table-hover align-middle">
+    <thead class="table-dark">
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Descripción del Hotel</th>
+        <th scope="col">Habitaciones Disponibles</th>
+        <th scope="col">Precio</th>
+        <th scope="col">Impuesto</th>
+        <th scope="col">Tipo Habitacion</th>
+        <th scope="col">Numero Habitaciones</th>
+        <th scope="col">ubicacion</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody class="border rounded">
+      <tr *ngFor="let hotel of hoteles">
+        <th scope="row">{{ hotel.idhotel }}</th>
+        <td>{{ hotel.descripcion }}</td>
+        <td>{{ hotel.habitacionesDisponibles }}</td>
+        <td>{{ hotel.precio }}</td>
+        <td>{{ hotel.impuesto }}</td>
+        <td>{{ hotel.tipoHabitacion }}</td>
+        <td>{{ hotel.numeroHabitaciones }}</td>
+        <td>{{ hotel.ubicacion }}</td>
+        <td class="test-center">
+          <div *ngIf="pagina == 'admin'">
+            <button
+              (click)="editarHotel(hotel.idhotel)"
+              class="btn btn-warning btn-sm me-3"
+              [disabled]="hotel.deshabilitada"
+            >
+              Editar
+            </button>
+            <button
+              (click)="bloquearDesbloquearHotel(hotel.idhotel)"
+              class="btn btn-warning btn-sm me-3"
+              [disabled]="!hotel.deshabilitada"
+            >
+              Activar
+            </button>
+            <button
+              (click)="bloquearDesbloquearHotel(hotel.idhotel)"
+              class="btn btn-danger btn-sm me-3"
+              [disabled]="hotel.deshabilitada"
+            >
+              Bloquear
+            </button>
+          </div>
+          <div *ngIf="pagina == 'reserva'">
+            <button
+              (click)="irform(hotel.idhotel)"
+              class="btn btn-primary btn-sm me-3"
+            >
+              Reservar
+            </button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

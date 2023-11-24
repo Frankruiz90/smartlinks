@@ -1,0 +1,132 @@
+<div class="container">
+  <div class="container text-center m-5">
+    <h3>Agregar Reserva</h3>
+  </div>
+  <div class="card rounded pb-4">
+    <form (ngSubmit)="onSubmit()" class="d-flex flex-wrap">
+      <div class="m-3 col-5">
+        <label for="nombre" class="form-label">Nombre</label>
+
+        <input
+          type="text"
+          class="form-control"
+          id="nombre"
+          name="nombre"
+          required="true"
+          [(ngModel)]="reserva.nombre"
+        />
+      </div>
+      <div class="m-3 col-5">
+        <label for="apellido" class="form-label">Apellido</label>
+
+        <input
+          type="text"
+          class="form-control"
+          id="apellido"
+          name="apellido"
+          required="true"
+          [(ngModel)]="reserva.apellido"
+        />
+      </div>
+      <div class="m-3 col-5">
+        <label for="celular" class="form-label">Celular</label>
+
+        <input
+          type="text"
+          class="form-control"
+          id="celular"
+          name="celular"
+          required="true"
+          [(ngModel)]="reserva.celular"
+        />
+      </div>
+      <div class="m-3 col-5">
+        <label for="correo" class="form-label">Correo</label>
+
+        <input
+          type="text"
+          class="form-control"
+          id="correo"
+          name="correo"
+          required="true"
+          [(ngModel)]="reserva.correo"
+        />
+      </div>
+      <div class="m-3 col-5">
+        <label for="descripcion" class="form-label">Descripcion</label>
+
+        <input
+          type="text"
+          class="form-control"
+          id="descripcion"
+          name="descripcion"
+          required="true"
+          [(ngModel)]="reserva.descripcion"
+        />
+      </div>
+      <div class="m-3 col-5">
+        <label for="numeroHabitaciones" class="form-label"
+          >Numero deHabitaciones</label
+        >
+        <input
+          type="number"
+          class="form-control"
+          step="any"
+          id="numeroHabitaciones"
+          name="numeroHabitaciones"
+          [(ngModel)]="reserva.numeroHabitaciones"
+        />
+      </div>
+      <div class="m-3 col-5">
+        <label for="numeroPersonas" class="form-label"
+          >Numero de Personas</label
+        >
+        <input
+          type="number"
+          class="form-control"
+          step="any"
+          id="numeroPersonas"
+          name="numeroPersonas"
+          [(ngModel)]="reserva.numeroPersonas"
+        />
+      </div>
+      <div class="m-3 col-5">
+        <label for="ciudad" class="form-label">Ciudad</label>
+        <input
+          type="text"
+          class="form-control"
+          id="ciudad"
+          name="ciudad"
+          [(ngModel)]="reserva.ciudad"
+        />
+      </div>
+      <div class="m-3 col-5">
+        <label for="fechaIngreso" class="form-label">Fecha Ingreso</label>
+        <input
+          type="date"
+          class="form-control"
+          id="fechaIngreso"
+          name="fechaIngreso"
+          [(ngModel)]="reserva.fechaIngreso"
+        />
+      </div>
+      <div class="m-3 col-5">
+        <label for="fechaSalida" class="form-label">Fecha de Salida</label>
+        <input
+          type="date"
+          class="form-control"
+          id="fechaSalida"
+          name="fechaSalida"
+          [(ngModel)]="reserva.fechaSalida"
+        />
+      </div>
+
+      <div class="text-center col-12">
+        <button type="submit" class="btn btn-warning btn-sm me-3">
+          Guardar
+        </button>
+        <a href="/" class="btn btn-danger btn-sm">Regresar</a>
+      </div>
+    </form>
+  </div>
+</div>

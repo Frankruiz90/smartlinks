@@ -1,0 +1,88 @@
+<div class="container">
+  <div class="container text-center m-5">
+    <h3>Agregar hotel</h3>
+  </div>
+  <form (ngSubmit)="onSubmit()" class="d-flex flex-wrap">
+    <div class="m-3 col-5">
+      <label for="descripcion" class="form-label">Descripcion del hotel</label>
+      <input
+        type="text"
+        class="form-control"
+        id="descripcion"
+        name="descripcion"
+        required="true"
+        [(ngModel)]="hotel.descripcion"
+      />
+    </div>
+    <div class="m-3 col-5">
+      <label for="habitacionesDisponibles" class="form-label"
+        >Habitaciones Disponibles</label
+      >
+      <input
+        type="number"
+        class="form-control"
+        step="any"
+        id="habitacionesDisponibles"
+        name="habitacionesDisponibles"
+        [(ngModel)]="hotel.habitacionesDisponibles"
+      />
+    </div>
+    <div class="m-3 col-5">
+      <label for="precio" class="form-label">Precio</label>
+      <input
+        type="number"
+        class="form-control"
+        step="any"
+        id="precio"
+        name="precio"
+        [(ngModel)]="hotel.precio"
+      />
+    </div>
+    <div class="m-3 col-5">
+      <label for="numeroHabitaciones" class="form-label"
+        >Numero Habitaciones</label
+      >
+      <input
+        type="number"
+        class="form-control"
+        id="numeroHabitaciones"
+        name="numeroHabitaciones"
+        [(ngModel)]="hotel.numeroHabitaciones"
+      />
+    </div>
+    <div class="m-3 col-5">
+      <label for="impuesto" class="form-label">Impuesto</label>
+      <input
+        type="number"
+        class="form-control"
+        id="existencia"
+        name="impuesto"
+        [(ngModel)]="hotel.impuesto"
+      />
+    </div>
+    <div class="m-3 col-5">
+      <label for="tipoHabitacion" class="form-label">Tipo Habitacion</label>
+      <input
+        type="text"
+        class="form-control"
+        id="tipoHabitacion"
+        name="tipoHabitacion"
+        [(ngModel)]="hotel.tipoHabitacion"
+      />
+    </div>
+    <div class="m-3 col-5">
+      <label for="ubicacion" class="form-label">Ubicacion</label>
+      <input
+        type="text"
+        class="form-control"
+        id="ubicacion"
+        name="ubicacion"
+        [(ngModel)]="hotel.ubicacion"
+      />
+    </div>
+    <div class="text-center col-12">
+      <button type="submit" class="btn btn-warning btn-sm me-3">Guardar</button>
+      <a href="/" class="btn btn-danger btn-sm">Regresar</a>
+    </div>
+  </form>
+</div>
