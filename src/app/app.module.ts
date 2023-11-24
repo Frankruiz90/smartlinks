@@ -24,7 +24,8 @@ import { FormularioReservaComponent } from './page/formulario-reserva/formulario
     AddhotelComponent,
     NavbarComponent,
     ReservaComponent,
-    FormularioReservaComponent
+    FormularioReservaComponent,
+
   ],
   imports: [
     BrowserModule,
