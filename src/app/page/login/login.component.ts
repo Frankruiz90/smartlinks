@@ -33,14 +33,19 @@ export class LoginComponent {
     this.userVerification();
   }
   userVerification() {
-    let dataLogin = this.mockLogin.filter((e: any) => {
-      if (e.user == this.login.usuario) {
-        localStorage.setItem('rol', e.rol);
-        // e.rol =='admin'? this.enrutador.navigate(['/homeadmin']):this.enrutador.navigate(['/reserva']);
-      } else {
-        alert('Usuaro no encontrado');
-        this.enrutador.navigate(['/']);
-      }
-    });
+    let dataLogin = this.mockLogin.find((e: any) => {
+       return e.user == this.login.usuario;
+      });
+    if (dataLogin != undefined && dataLogin.rol == 'admin') {
+      this.enrutador.navigate(['/homeadmin']);
+    } else if (dataLogin != undefined && dataLogin.rol == 'client') {
+      this.enrutador.navigate(['/reserva']);
+    } else if (dataLogin != undefined && dataLogin.rol == 'vendedor') {
+      this.enrutador.navigate(['/reserva']);
+    }else if (dataLogin == undefined) {
+      alert('Usuario no encontrado')
+      this.enrutador.navigate(['/']);
+    }
+    localStorage.setItem('rol',dataLogin.rol);
   }
 }
